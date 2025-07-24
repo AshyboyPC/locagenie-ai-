@@ -9,6 +9,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import WelcomeScreen from './components/WelcomeScreen';
 import { BeamsBackground } from './components/ui/beams-background';
+import { SupportSection } from './components/SupportSection';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <AboutMeSection />
         <Testimonials />
         <Logos3 />
+        <SupportSection />
         <Contact />
         <Footer />
       </div>

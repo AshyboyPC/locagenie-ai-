@@ -1,5 +1,5 @@
 import React from 'react';
-import { Twitter, Github, Instagram } from 'lucide-react';
+import { Twitter, Github, Instagram, Youtube } from 'lucide-react';
 import { AnimatedSocialIcons } from './ui/floating-action-button';
 
 const Footer = () => {
@@ -66,6 +66,11 @@ const Footer = () => {
                       Icon: Github,
                       href: "https://github.com/AshyboyPC",
                       className: "hover:bg-gray-700/20"
+                    },
+                    {
+                      Icon: Youtube,
+                      href: "https://www.youtube.com/@AIExplained_25",
+                      className: "hover:bg-red-600/20"
                     }
                   ]}
                   iconSize={16}

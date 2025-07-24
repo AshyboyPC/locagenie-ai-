@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 
 interface NavbarProps {
@@ -6,7 +6,6 @@ interface NavbarProps {
 }
 
 const Navbar = ({ className = '' }: NavbarProps) => {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
 
@@ -23,12 +22,13 @@ const Navbar = ({ className = '' }: NavbarProps) => {
     { label: 'What We Do', id: 'services' },
     { label: 'Why LocaGenie', id: 'why' },
     { label: 'Testimonials', id: 'testimonials' },
-    { label: 'Contact', id: 'contact' }
+    { label: 'Contact', id: 'contact' },
+    { label: 'Support', id: 'support' }
   ];
 
   return (
     <nav 
-      className={`fixed left-1/2 -translate-x-1/2 z-[1000] transition-all duration-300 shadow-2xl border-b border-white/10 glass glass-hover overflow-hidden rounded-full max-w-5xl w-[90vw] px-6 font-sans ${className} ${isScrolled ? 'py-2' : 'py-3'} top-6 opacity-100`} 
+      className={`fixed left-1/2 -translate-x-1/2 z-[1000] transition-all duration-300 shadow-2xl border-b border-white/10 glass glass-hover overflow-hidden rounded-full max-w-5xl w-[90vw] px-6 font-sans ${className} py-3 top-6 opacity-100`} 
       style={{ willChange: 'transform' }}
     >
       {/* Liquid glass animated gradient overlay */}
@@ -80,7 +80,10 @@ const Navbar = ({ className = '' }: NavbarProps) => {
             {navItems.map((item) => (
               <button
                 key={item.id}
-                onClick={() => scrollToSection(item.id)}
+                onClick={() => {
+                  scrollToSection(item.id);
+                  setIsMobileMenuOpen(false);
+                }}
                 className="block w-full text-left px-4 py-4 text-lg text-gray-300 hover:text-white transition-colors duration-200 font-bold"
               >
                 {item.label}
